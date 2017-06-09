@@ -11,5 +11,4 @@ RUN npm install npm@3.10.8 -g
 
 ADD startup.sh .
 
-EXPOSE 9000
 CMD [ "./startup.sh" ]
