@@ -8,8 +8,10 @@ dependencies:
     - docker build --rm=false -t bondezbond/node_startup .
 
 test:
+  pre:
+    - bundle install --path vendor/bundle
   override:
-    - "true"
+    - DEBUG=1 bundle exec rspec
 
 # deployment:
 #   hub:
