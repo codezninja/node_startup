@@ -1,13 +1,15 @@
 machine:
-  post:
-    - curl -L https://get.docker.com/builds/Linux/x86_64/docker-latest.tgz | tar -xzv && sudo mv -f docker/* /usr/bin/
-    - sudo container=yes docker daemon: { background: true }
-    - docker --version
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker build --rm=false -t bondezbond/node_startup .
 
 test:
   pre:
     - bundle install --path vendor/bundle
-    - docker build --rm=false -t bondezbond/node_startup .
   override:
     - DEBUG=1 bundle exec rspec
 
