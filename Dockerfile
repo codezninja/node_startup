@@ -1,4 +1,4 @@
-FROM node:4.3.2
+FROM node:4.8.3
 
 RUN apt-get update
 RUN apt-get -y install netcat

@@ -16,13 +16,13 @@ describe "Dockerfile" do
   describe "dependencies" do
     describe command('npm -v') do
       its(:stderr) { should be_empty }
-      its(:stdout) { should match "2.14.12" }
+      its(:stdout) { should match "2.15.11" }
       its(:exit_status) { should eq 0 }
     end
 
     describe command('node -v') do
       its(:stderr) { should be_empty }
-      its(:stdout) { should match "4.3.2" }
+      its(:stdout) { should match "4.8.3" }
       its(:exit_status) { should eq 0 }
     end
   end
