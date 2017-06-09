@@ -16,7 +16,7 @@ describe "Dockerfile" do
   describe "dependencies" do
     describe command('npm -v') do
       its(:stderr) { should be_empty }
-      its(:stdout) { should match "2.15.11" }
+      its(:stdout) { should match "3.10.8" }
       its(:exit_status) { should eq 0 }
     end
 

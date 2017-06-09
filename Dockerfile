@@ -7,6 +7,8 @@ RUN apt-get -y install netcat
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
+RUN npm install npm@3.10.8 -g
+
 ADD startup.sh .
 
 EXPOSE 9000
