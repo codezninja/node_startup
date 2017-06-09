@@ -5,7 +5,7 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build --rm=false -t bondezbond/node_startup .
+    - docker build --rm=false -t bondezbond/node_startup:dev .
 
 test:
   pre:
@@ -13,7 +13,12 @@ test:
   override:
     - DEBUG=1 bundle exec rspec
 
-# deployment:
+deployment:
+  dev:
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push bondezbond/node_startup:dev
+
 #   hub:
 #     branch: master
 #     commands:
