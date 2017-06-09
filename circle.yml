@@ -4,10 +4,6 @@ machine:
     - sudo container=yes docker daemon: { background: true }
     - docker --version
 
-dependencies:
-  override:
-    - docker build --rm=false -t bondezbond/node_startup .
-
 test:
   pre:
     - bundle install --path vendor/bundle
