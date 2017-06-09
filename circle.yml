@@ -6,7 +6,6 @@ machine:
 
 dependencies:
   override:
-    - docker info
     - docker build --rm=false -t bondezbond/node_startup .
 
 test:
